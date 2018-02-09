@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 enc_val = 0
-img = cv2.imread("image.jpg",0)
+img = cv2.imread("Image_1.jpg",0)
 print(img)
 
 cv2.imshow("Original Image",img)
@@ -24,6 +24,7 @@ for i in img:
 
 print(img)
 
+#cv2.imwrite("Final_enc.jpg",img)
 cv2.imshow("Encrypted Image",img)
 
 cv2.waitKey(0)
