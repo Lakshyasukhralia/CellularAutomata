@@ -8,12 +8,13 @@ from Rules import *
     IV.append(j)
 '''
 def HashFunC(L,time,RV):
+    j = 0
     IV1 = L[:]
     IV2 = []
     x = 0
     Rec = False
     IV = L[:]
-    print(IV)
+    #print(IV)
     #print(IV)
     #print("Generation 0")
     #print(IV)
@@ -21,7 +22,7 @@ def HashFunC(L,time,RV):
     for j in range(1,time):
         if Rec == True:
             #print("End")
-            return j-1
+            return j-1,IV
             break
         x = 0
         IV2.clear()
@@ -44,9 +45,9 @@ def HashFunC(L,time,RV):
                     else:
                         IV2.append(R30(a,b,c))
                     #print("Generation",j)
-                    print(IV2)
+                    #print(IV2)
                     if IV2 == IV1:
-                        print("Initial Stage Achieved! \n")
+                        #print("Initial Stage Achieved! \n")
                         #print(IV2)
                         Rec = True
                         IV = IV2[:]
@@ -76,7 +77,7 @@ def HashFunC(L,time,RV):
                             IV2.append(R90(a,b,c))
 
                     x = x+1
-    return IV
+    return j,IV
 
 #print(HashFunC([0,0,0,0,0,1,1,0],1000000))
 #print(HashFunC([1,1,1,1,1,1,1,1],10000000))
