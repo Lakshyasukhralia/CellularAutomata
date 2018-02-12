@@ -5,7 +5,7 @@ import numpy as np
 Dec = False
 enc_val = 0
 lines =[]
-img = cv2.imread("image.jpg",0)
+img = cv2.imread("lena.png",0)
 print(img)
 
 cv2.imshow("Original Image",img)

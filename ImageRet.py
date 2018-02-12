@@ -125,7 +125,11 @@ def CY_Num(x,Dec,s,lines):
             the_file.write(str(H_Time_Dec[s]))
             the_file.write(RVR)
             the_file.write("\n")
-        return n
+
+        if(CTF == True):
+            return n*0.5
+        else:
+            return n
 
 #print(CY_Num(218,False,0,9))
 print(CY_Num(88,True,0,"111True"))
