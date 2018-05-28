@@ -1,5 +1,5 @@
 from Rules import *
-
+import numba as nb
 #Rec = False
 
 #Input by user
@@ -7,11 +7,13 @@ from Rules import *
     j = int(input(""))
     IV.append(j)
 '''
+#@nb.jit(nopython=True)
 def HashFunC(L,time,RV):
     j = 0
     IV1 = L[:]
     IV2 = []
     x = 0
+    RV = False
     Rec = False
     IV = L[:]
     #print(IV)
@@ -32,6 +34,7 @@ def HashFunC(L,time,RV):
                 b = i
                 c = IV[x+1]
                 #print(a,b,c,"-->",R30(a,b,c))
+                #print("R90")
                 IV2.append(R90(a,b,c))
                 x = x+1
             else:
@@ -41,13 +44,15 @@ def HashFunC(L,time,RV):
                     c = 0
                     #print(a,b,c,"-->",R30(a,b,c))
                     if RV == False:
+                        #print("R90")
                         IV2.append(R90(a,b,c))
                     else:
+                        #print("R30")
                         IV2.append(R30(a,b,c))
                     #print("Generation",j)
                     #print(IV2)
                     if IV2 == IV1:
-                        #print("Initial Stage Achieved! \n")
+                        print("Initial Stage Achieved! \n")
                         #print(IV2)
                         Rec = True
                         IV = IV2[:]
@@ -60,20 +65,27 @@ def HashFunC(L,time,RV):
                     c = IV[x+1]
                     #print(a,b,c,"-->",R30(a,b,c))
                     if RV == False:
+                        #print("R90")
                         IV2.append(R90(a,b,c))
                     else:
 
                         if x == 1:
+                            #print("R30")
                             IV2.append(R30(a,b,c))
                         elif x == 2:
+                            #print("R90")
                             IV2.append(R90(a,b,c))
                         elif x == 3:
+                            #print("R30")
                             IV2.append(R30(a,b,c))
                         elif x == 4:
+                            #print("R90")
                             IV2.append(R90(a,b,c))
                         elif x == 5:
+                            #print("R30")
                             IV2.append(R30(a,b,c))
                         elif x == 6:
+                            #print("R90")
                             IV2.append(R90(a,b,c))
 
                     x = x+1

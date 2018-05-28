@@ -1,4 +1,5 @@
 from TempRule import HashFunC
+import numba as nb
 
 IP = []
 H_Time_Dec = []
@@ -9,7 +10,7 @@ def convertToBinary(n):
    #print(n % 2,end = '')
    IP.append(n%2)
 
-
+#@nb.jit(nopython=True)
 def CY_Num(x,Dec,s,lines):
 
     if Dec == True:
@@ -121,17 +122,17 @@ def CY_Num(x,Dec,s,lines):
         n = int(b_n,2)
         IP.clear()
         #print(H_Time_Dec)
-        with open('test.txt', 'a') as the_file:
+        with open('D:\\Cellular Automata Stuff\\CellularAutomata\\Generated\\test.txt', 'a') as the_file:
             the_file.write(str(H_Time_Dec[s]))
             the_file.write(RVR)
             the_file.write("\n")
 
-        if(CTF == True):
+        '''if(CTF == True):
             return n*0.5
-        else:
-            return n
+        else:'''
+        return n
 
 #print(CY_Num(218,False,0,9))
-print(CY_Num(88,True,0,"111True"))
+#print(CY_Num(88,True,0,"111True"))
 #print(H_Time_Dec)
 #print(HashFunC([0,1,0,1,1,0,0,0],H_Time_Dec[0],False))

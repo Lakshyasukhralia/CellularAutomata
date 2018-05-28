@@ -5,7 +5,7 @@ import numpy as np
 Dec = False
 enc_val = 0
 lines =[]
-img = cv2.imread("lena.png",0)
+img = cv2.imread("image.png",0)
 print(img)
 
 cv2.imshow("Original Image",img)
@@ -24,10 +24,10 @@ for i in img:
             print("-----------------------------------------")
 
 
-
+print("------------------------------------------------------------------\n\n")
 print(img)
 
-cv2.imwrite("test.png",img)
+cv2.imwrite("D:\\Cellular Automata Stuff\\CellularAutomata\\Generated\\test.png",img)
 cv2.imshow("Encrypted Image",img)
 
 cv2.waitKey(0)
